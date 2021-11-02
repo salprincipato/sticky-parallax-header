@@ -112,7 +112,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
   };
 
   renderTabbedForeground = (scrollY: Animated.ValueXY) => {
-    const { title, titleStyle, foregroundImage } = this.props;
+    const { title, foregroundImage } = this.props;
     //const messageStyle = [styles.message, titleStyle];
 
     const startSize = constants.responsiveWidth(18);
