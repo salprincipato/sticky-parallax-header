@@ -47,6 +47,7 @@ export interface TabbedHeaderProps extends SharedPredefinedHeaderProps {
   tabsContainerHorizontalPadding?: StickyParallaxHeaderProps['tabsContainerHorizontalPadding'];
   title?: any;
   titleStyle?: StyleProp<TextStyle>;
+  verticalScrollDisabled: boolean;
 }
 
 type State = {
@@ -199,6 +200,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
       tabUnderlineColor,
       tabsContainerHorizontalPadding,
       horizontalScrollBounces,
+      verticalScrollDisabled,
     } = this.props;
 
     const tabsContainerBgColor = tabsContainerBackgroundColor ?? backgroundColor;
@@ -246,6 +248,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
           tabsContainerStyle={tabsContainerStyle}
           tabsContainerHorizontalPadding={tabsContainerHorizontalPadding}
           horizontalScrollBounces={horizontalScrollBounces}
+          verticalScrollDisabled={verticalScrollDisabled}
         />
       </>
     );
