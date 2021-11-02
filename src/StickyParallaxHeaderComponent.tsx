@@ -79,6 +79,7 @@ export interface StickyParallaxHeaderProps {
   tabUnderlineColor: string | null;
   tabsContainerHorizontalPadding?: number;
   horizontalScrollBounces?: boolean;
+  verticalScrollDisabled?: boolean;
 }
 
 type State = {
@@ -410,6 +411,7 @@ class StickyParallaxHeaderComponent extends Component<StickyParallaxHeaderProps,
       onMomentumScrollEnd,
       onMomentumScrollBegin,
       horizontalScrollBounces,
+      verticalScrollDisabled,
     } = this.props;
     const { currentPage } = this.state;
     const scrollHeight = Math.max(parallaxHeight, headerHeight * 2);
@@ -451,6 +453,7 @@ class StickyParallaxHeaderComponent extends Component<StickyParallaxHeaderProps,
           stickyHeaderIndices={shouldRenderTabs ? [1] : []}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+          scrollEnabled={verticalScrollDisabled ? false : true}
           onMomentumScrollEnd={onMomentumScrollEnd}
           onMomentumScrollBegin={onMomentumScrollBegin}
           onScroll={event(
