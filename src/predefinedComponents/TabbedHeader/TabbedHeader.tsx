@@ -46,7 +46,7 @@ export interface TabbedHeaderProps extends SharedPredefinedHeaderProps {
   tabUnderlineColor?: StickyParallaxHeaderProps['tabUnderlineColor'];
   tabsContainerStyle?: StickyParallaxHeaderProps['tabsContainerStyle'];
   tabsContainerHorizontalPadding?: StickyParallaxHeaderProps['tabsContainerHorizontalPadding'];
-  title?: string;
+  title?: any;
   titleStyle?: StyleProp<TextStyle>;
 }
 
@@ -157,7 +157,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
       <View style={styles.foreground}>
         {renderImage()}
         <Animated.View style={[styles.messageContainer, { opacity: titleOpacity }]}>
-          <Text style={messageStyle}>{title}</Text>
+          {title}
         </Animated.View>
       </View>
     );
