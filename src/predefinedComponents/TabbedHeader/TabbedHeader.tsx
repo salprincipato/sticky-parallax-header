@@ -8,7 +8,6 @@ import {
   LayoutRectangle,
   NativeScrollEvent,
   NativeSyntheticEvent,
-  StatusBar,
   StyleProp,
   TextStyle,
   View,
@@ -207,7 +206,6 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
 
     return (
       <>
-        <StatusBar barStyle="light-content" backgroundColor={backgroundColor} translucent />
         <StickyParallaxHeader
           tabUnderlineColor={tabUnderlineColor}
           backgroundImage={backgroundImage}
