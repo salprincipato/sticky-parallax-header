@@ -10,7 +10,6 @@ import {
   NativeSyntheticEvent,
   StatusBar,
   StyleProp,
-  Text,
   TextStyle,
   View,
   ViewStyle,
@@ -114,7 +113,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
 
   renderTabbedForeground = (scrollY: Animated.ValueXY) => {
     const { title, titleStyle, foregroundImage } = this.props;
-    const messageStyle = [styles.message, titleStyle];
+    //const messageStyle = [styles.message, titleStyle];
 
     const startSize = constants.responsiveWidth(18);
     const endSize = constants.responsiveWidth(10);
@@ -156,7 +155,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
     return (
       <View style={styles.foreground}>
         {renderImage()}
-        <Animated.View style={[styles.messageContainer, { opacity: titleOpacity }]}>
+        <Animated.View style={{ opacity: titleOpacity, flex: 1 }}>
           {title}
         </Animated.View>
       </View>
