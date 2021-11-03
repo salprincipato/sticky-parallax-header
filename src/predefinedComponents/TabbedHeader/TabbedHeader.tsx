@@ -47,6 +47,7 @@ export interface TabbedHeaderProps extends SharedPredefinedHeaderProps {
   title?: any;
   titleStyle?: StyleProp<TextStyle>;
   verticalScrollDisabled: boolean;
+  foregroundStyles?: any;
 }
 
 type State = {
@@ -112,7 +113,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
   };
 
   renderTabbedForeground = (scrollY: Animated.ValueXY) => {
-    const { title, foregroundImage } = this.props;
+    const { title, foregroundImage, foregroundStyles } = this.props;
     //const messageStyle = [styles.message, titleStyle];
 
     const startSize = constants.responsiveWidth(18);
@@ -153,7 +154,7 @@ class TabbedHeader extends React.Component<TabbedHeaderProps, State> {
     };
 
     return (
-      <View style={styles.foreground}>
+      <View style={foregroundStyles || styles.foreground}>
         {renderImage()}
         <Animated.View style={{ opacity: titleOpacity, flex: 1 }}>
           {title}
