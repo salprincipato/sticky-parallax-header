@@ -198,7 +198,7 @@ class StickyParallaxHeaderComponent extends Component<StickyParallaxHeaderProps,
     if (y < -20 && !constants.isAndroid && !refreshControl) this.spring();
 
     if (snapToEdge) {
-      if (y > 0 && y < snapToEdgeThreshold) {
+      if (y > 0 && (y < snapToEdgeThreshold || this.state.isFolded)) {
         return constants.isAndroid
           ? this.setState(
               {
