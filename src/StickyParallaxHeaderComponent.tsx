@@ -218,7 +218,7 @@ class StickyParallaxHeaderComponent extends Component<StickyParallaxHeaderProps,
               });
             });
       }
-      if ((y >= snapToEdgeThreshold && y < scrollHeight) || (this.state.folded && y > height)) {
+      if ((y >= snapToEdgeThreshold && y < scrollHeight) || (this.state.isFolded && y > height)) {
         return constants.isAndroid
           ? this.setState(
               {
